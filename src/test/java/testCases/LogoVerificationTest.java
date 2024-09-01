@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import pageObject.HomePage;
 import testBase.BaseClass;
 
-public class LogoVeriicationTest extends BaseClass{
+public class LogoVerificationTest extends BaseClass{
 	
 	HomePage homepage;
 	

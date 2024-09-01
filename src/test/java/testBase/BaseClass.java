@@ -1,14 +1,11 @@
 package testBase;
 
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
+import java.time.Duration;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -17,11 +14,12 @@ public class BaseClass {
 	
 	public WebDriver driver;
 	
-	@Parameters({"os", "browser"})
 	@BeforeClass
-	public void setUp(String os, String browser) throws MalformedURLException, URISyntaxException
+	public void setUp() throws MalformedURLException, URISyntaxException
 	{
-		DesiredCapabilities decap = new DesiredCapabilities();
+		
+		
+	/*	DesiredCapabilities decap = new DesiredCapabilities();
 		
 		switch(os.toLowerCase())
 		{
@@ -42,9 +40,12 @@ public class BaseClass {
 		URL url = new URI("http://localhost:4444/wd/hub").toURL();
 		
 		driver = new RemoteWebDriver(url, decap);
+		*/
 		
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
-		driver.get("https://www.flipkart.com/");
+		driver.get("https://www.amazon.com/");
 	}
 
 	

@@ -15,7 +15,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//img[@title='Flipkart']") 
+	@FindBy(xpath="//a[@id='nav-logo-sprites']") 
 	@CacheLookup  WebElement logo;
 	
 	public boolean verifyLogoDisplay()

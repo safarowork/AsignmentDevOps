@@ -3,10 +3,8 @@
 <suite name="Suite">
 
   <test thread-count="8" name="TestChrome">
-  	<parameter name="os" value="linux" />
-  	<parameter name="browser" value="chrome" />
     <classes>
-      <class name="testCases.LogoVeriicationTest"/>
+      <class name="testCases.LogoVerificationTest"/>
     </classes>
   </test> 
 
